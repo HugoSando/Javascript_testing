@@ -16,7 +16,7 @@ jobs:
           node-version: 20
           cache: 'npm'
       - run: npm install
-      - run: npm test -- --reporter vitest-report-junit
+      - run: npm test --reporter=json --outputFile=./test-output.json
       - name: Publish Test Results
         uses: EnricoMi/publish-unit-test-result-action@v2.16.1
         if: always()
